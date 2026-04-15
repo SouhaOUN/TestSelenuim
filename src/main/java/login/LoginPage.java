@@ -5,46 +5,31 @@ import org.openqa.selenium.WebDriver;
 import securearea.SecureAreaPage;
 
 public class LoginPage {
-
-    // Instance du WebDriver
     private WebDriver driver;
-
-    // ⚠️ Champ inutile et incorrect (à supprimer)
     public Boolean Boolean;
+    private By usernameFiled = By.id("username");
+    private By passwordFailed = By.id("password");
+    private By buttonLogin =By.className("radius");
 
-    // Locators des champs de login
-    private By usernameField = By.id("username");
-    private By passwordField = By.id("password");
-    private By loginButton = By.className("radius");
-
-    // Constructeur
     public LoginPage(WebDriver driver){
-        this.driver = driver;
+        this.driver =driver;
     }
-
-    // Saisie du username
-    public void setUsername(String username){
-        driver.findElement(usernameField).sendKeys(username);
+    public void SetUsername(String username){
+        driver.findElement(usernameFiled).sendKeys(username);
     }
-
-    // Saisie du password
-    public void setPassword(String password){
-        driver.findElement(passwordField).sendKeys(password);
+    public void SetPassword(String password){
+        driver.findElement(passwordFailed).sendKeys(password);
     }
+    public boolean isDisplayedButton(){
+        return driver.findElement(buttonLogin).isDisplayed();
 
-    // Vérifie si le bouton login est affiché
-    public boolean isLoginButtonDisplayed(){
-        return driver.findElement(loginButton).isDisplayed();
     }
-
-    // Vérifie si le bouton login est activé
-    public boolean isLoginButtonEnabled(){
-        return driver.findElement(loginButton).isEnabled();
+    public boolean isisEnabledButton(){
+        return driver.findElement(buttonLogin).isEnabled();
     }
-
-    // Clique sur login et retourne la page sécurisée
-    public SecureAreaPage clickLoginButton(){
-        driver.findElement(loginButton).click();
+    public SecureAreaPage cliqueLoginButton(){
+        driver.findElement(buttonLogin).click();
         return new SecureAreaPage(driver);
     }
+
 }
