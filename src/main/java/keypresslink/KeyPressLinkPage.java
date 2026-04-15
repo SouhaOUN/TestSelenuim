@@ -9,7 +9,7 @@ public class KeyPressLinkPage {
     // Instance du WebDriver
     private WebDriver driver;
 
-    // Constructeur
+    // Constructeur KeyPressLinkPage
     public KeyPressLinkPage(WebDriver driver){
         this.driver = driver;
     }
