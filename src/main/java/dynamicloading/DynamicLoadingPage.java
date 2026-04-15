@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class DynamicLoadingPage {
-
+ // WebDriver instance used to interact with the browser 
     // WebDriver instance used to interact with the browser
     WebDriver driver;
 
